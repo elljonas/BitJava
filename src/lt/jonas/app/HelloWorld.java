@@ -1,5 +1,7 @@
 package lt.jonas.app;
 
+import java.util.Scanner;
+
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -53,6 +55,88 @@ public class HelloWorld {
         System.out.println(tekstas.replace('o','z'));
         //Tikrinama ar stringas baigiasi žodžiu “elit”:
         System.out.println(tekstas.endsWith("elit"));
+
+        System.out.println("---------------------------------------");
+        Scanner sc = new Scanner(System.in);  // Create a Scanner object
+        System.out.print("Enter Your age, please: ");
+        int age = Integer.parseInt(sc.nextLine());  // Read user input - laukia vartotojo įvesties ir enter paspausto
+        // int num = sc.nextInt(); // This method reads the number provided using keyboard
+        // sc.close(); // Closing Scanner after the use
+        System.out.println("Your age is: " + age);  // Output user input
+        // int age = 18;
+        if (age < 18 ){
+            System.out.println("Unfortunately, You can't vote");
+        } else if ( age >= 18 && age < 45 ) {
+            System.out.println("You can vote");
+        }
+            else if( age >=45 ){
+                System.out.println("You can vote and to stand as a candidate");
+            }
+        System.out.println("---------------------------------------");
+        int counter = 0;
+        while(counter > 0){
+            System.out.println("Niekada neįvykęs ciklas");
+        }
+        for (int i = 1; i < 0 ; i++) {
+            System.out.println("Niekada neįvykęs ciklas");
+        }
+        System.out.println("---------------------------------------");
+        // infinite loop
+        // while(5>4){
+        //     System.out.println("Niekada nesibaigia");
+        // }
+        // for( ; ; ){
+        //     System.out.println("Labas");
+        // }
+        System.out.println("---------------------------------------");
+        // ... Bandymai su raidės spėjimo pratimu:
+        // Scanner sc1 = new Scanner(System.in);  // Create a Scanner object
+        // System.out.print("Enter a letter, guess please: ");
+        // // Read user input - laukia vartotojo įvesties ir enter paspausto
+        // String letter1 = "q";
+        // String letter;
+        // while ((letter = sc1.nextLine()) != letter1){
+        //     System.out.println("Your guess is: " + letter);
+        //     System.out.println("Enter a letter, guess please: ");
+        //     }
+        // System.out.println("Yes, this letter!!!");
+
+        // String n;
+        // Scanner input = new Scanner(System.in);
+        // while (true) { // Condition in while loop is always true here
+        //     System.out.println("Input a letter, guess please: ");
+        //     n = input.nextLine();
+        //     if (n == "q") {
+        //         System.out.println("Yes, this Letter!!");
+        //         break;
+        //     }
+        //     System.out.println("---------------------------------------\nYou entered " + n);
+        // }
+        // .. veikiantis variantas
+        Scanner sc1 = new Scanner(System.in);
+        String userInput = null;
+        String letter = "q";
+        do {
+            System.out.print("Please guess, enter a letter: ");
+            userInput = sc1.nextLine();
+        } while(!userInput.equals(letter)); // while userinput is not equal to letter, do x
+        System.out.println("You are write! Letter is \"q\"");
+        // ... reverse string in Java
+        System.out.println("---------------------------------------");
+        System.out.println("------- Reverse string in Java --------");
+        Scanner sc2 = new Scanner(System.in);
+        System.out.print("Please, enter the word: ");
+        String userInput2 = sc2.nextLine();
+        // String str = "alus";
+        String reversedString = new StringBuffer(userInput2).reverse().toString();
+        System.out.println(reversedString);
+        System.out.println("---------------------------------------");
+        Scanner sc3 = new Scanner(System.in);
+        System.out.println("Įveskite tekstą arbą žodį: ");
+        String userInput3 = sc3.nextLine();
+        for (int i = 0; i < userInput3.length(); i++) {
+            int k = i + 1;
+            System.out.println("- " + userInput3.charAt(i) + " " + k);
+        }
     }
 }
-
