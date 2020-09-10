@@ -1,11 +1,14 @@
 package lt.jonas.app;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
         System.out.println("Labas, Pasauli!!");
+        System.out.println("---------------------------------------");
+        System.out.println("----------Kintamųjų pratimai-----------");
         System.out.println("---------------------------------------");
         // Pasaulio gyventojų skaičius ir LT asmens kodas negali būti int tipo kintamieji JAVA kalboje,
         // nes skaiciai per dideli.
@@ -56,6 +59,9 @@ public class HelloWorld {
         //Tikrinama ar stringas baigiasi žodžiu “elit”:
         System.out.println(tekstas.endsWith("elit"));
 
+
+        System.out.println("---------------------------------------");
+        System.out.println("----------If'ų ir Ciklų pratimai-------");
         System.out.println("---------------------------------------");
         Scanner sc = new Scanner(System.in);  // Create a Scanner object
         System.out.print("Enter Your age, please: ");
@@ -138,5 +144,28 @@ public class HelloWorld {
             int k = i + 1;
             System.out.println("- " + userInput3.charAt(i) + " " + k);
         }
+        System.out.println("---------------------------------------");
+        System.out.println("----------Masyvų pratimai--------------");
+        System.out.println("---------------------------------------");
+        System.out.println("------------1 pratimas-----------------");
+        int [] arr3Ciklai = { 2, 3, 5};
+        for (int i = 0; i < arr3Ciklai.length; i++) {
+            if(i == arr3Ciklai.length - 1){
+                System.out.print(arr3Ciklai[i]);
+            } else{
+                System.out.print(arr3Ciklai[i] + ", ");
+            }
+        }
+        System.out.println("\n----------2 ir 3 pratimas--------------");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Įveskite norimą masyvo dydį: ");
+        int arrDydis = scan.nextInt();
+        System.out.println(arrDydis);
+        int[] kuriamasArr = new int[arrDydis];
+        System.out.println("Įveskite masyvo elementus vienas po kito: ");
+        for(int a = 0; a < arrDydis; a++) {
+            kuriamasArr[a] = scan.nextInt();
+        }
+        System.out.println("Masyvas atrodo taip: " + Arrays.toString(kuriamasArr));
     }
 }
